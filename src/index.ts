@@ -23,4 +23,4 @@ export { UtenteStruttura } from "./server-objects/entities/utente-struttura";
 
 export { GetStruttureByTipoProcedimento } from "./server-objects/functions-import/get-strutture-by-tipo-procedimento";
 
-export { ENTITIES, FUNCTIONS_IMPORT, VIEWS } from "./server-objects/declarations";
+export { ENTITIES, FUNCTIONS_IMPORT, VIEWS, RUOLI, CODICE_AFFERENZA_STRUTTURA, BUtente, BStruttura, BAzienda } from "./server-objects/declarations";

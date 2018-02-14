@@ -3,6 +3,7 @@ import {Entity} from "@bds/nt-angular-context/entity";
 export class AfferenzaStruttura extends Entity {
   public id: number;
   public descrizione: string;
+  public codice: string;
 
   public static getOdataContextEntity(): any {
     return {
@@ -10,7 +11,8 @@ export class AfferenzaStruttura extends Entity {
       keyType: "Int32",
       fieldTypes: {
         id: "Int32",
-        descrizione: "String"
+        descrizione: "String",
+        codice: "String"
       }
     };
   }
