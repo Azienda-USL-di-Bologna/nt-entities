@@ -2,6 +2,7 @@
  * classe che espone cosa deve essere visibile al di fuori del modulo.
  * Per rendere visibile fuori dal modulo un component/service occorre inserirlo in questo file
  */
+export { EntitiesModule } from "./entities.module";
 export { AfferenzaStruttura } from "./server-objects/entities/afferenza-struttura";
 export { Azienda } from "./server-objects/entities/azienda";
 export { AziendaTipoProcedimento } from "./server-objects/entities/azienda-tipo-procedimento";
@@ -23,4 +24,4 @@ export { UtenteStruttura } from "./server-objects/entities/utente-struttura";
 
 export { GetStruttureByTipoProcedimento } from "./server-objects/functions-import/get-strutture-by-tipo-procedimento";
 
-export { ENTITIES, FUNCTIONS_IMPORT, VIEWS, RUOLI, CODICE_AFFERENZA_STRUTTURA, BUtente, BStruttura, BAzienda } from "./server-objects/declarations";
+export { RUOLI, CODICE_AFFERENZA_STRUTTURA, bUtente, bStruttura, bAzienda, BusinessObjectKeyNames } from "./server-objects/declarations";

@@ -1,7 +1,5 @@
 import {Azienda} from "./azienda";
-import {Entity} from "@bds/nt-angular-context/entity";
-import {ENTITIES} from "../declarations";
-import {OdataForeignKey} from "@bds/nt-angular-context/server-object";
+import {Entity, OdataForeignKey} from "@bds/nt-angular-context";
 
 export class Struttura extends Entity {
   public id: number;
@@ -21,8 +19,9 @@ export class Struttura extends Entity {
   public FK_id_struttura_segreteria: number;
   public idStrutturaSegreteria: Struttura;
 
-  public static getOdataContextEntity(): any {
+  public getOdataContextEntity(): any {
     return {
+        name: this.getName(),
       key: "id",
       keyType: "Int32",
       fieldTypes: {
@@ -36,10 +35,14 @@ export class Struttura extends Entity {
         nome: "String",
         spettrale: "Boolean",
         usaSegreteriaBucataPadre: "Boolean",
-        idAzienda: new OdataForeignKey(ENTITIES.Azienda, "id"),
-        idStrutturaPadre: new OdataForeignKey(ENTITIES.Struttura, "id"),
-        idStrutturaSegreteria: new OdataForeignKey(ENTITIES.Struttura, "id"),
+        idAzienda: new OdataForeignKey(new Azienda().getName(), "id"),
+        idStrutturaPadre: new OdataForeignKey(this.getName(), "id"),
+        idStrutturaSegreteria: new OdataForeignKey(this.getName(), "id"),
       }
     };
+  }
+
+  public getName(): string {
+    return "Strutturas";
   }
 }

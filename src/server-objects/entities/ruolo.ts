@@ -1,4 +1,4 @@
-import {Entity} from "@bds/nt-angular-context/entity";
+import {Entity} from "@bds/nt-angular-context";
 
 export class Ruolo extends Entity {
   public id: number;
@@ -7,8 +7,12 @@ export class Ruolo extends Entity {
   public mascherBit: number;
   public superaziendale: boolean;
 
-  public static getOdataContextEntity(): any {
+  constructor() {
+    super();
+  }
+  public getOdataContextEntity(): any {
     return {
+      name: this.getName(),
       key: "id",
       keyType: "Int32",
       fieldTypes: {
@@ -21,7 +25,7 @@ export class Ruolo extends Entity {
     };
   }
 
-  constructor() {
-    super();
-  }
+    public getName(): string {
+        return "Ruolos";
+    }
 }

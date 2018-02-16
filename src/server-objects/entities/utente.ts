@@ -1,7 +1,5 @@
 import {Azienda} from "./azienda";
-import {ENTITIES} from "../declarations";
-import {Entity} from "@bds/nt-angular-context/entity";
-import {OdataForeignKey} from "@bds/nt-angular-context/server-object";
+import {Entity, OdataForeignKey} from "@bds/nt-angular-context";
 
 export class Utente extends Entity {
   public id: number;
@@ -24,8 +22,9 @@ export class Utente extends Entity {
   public idAzienda: Azienda;
   public bitRuoli: number;
 
-  public static getOdataContextEntity(): any {
+  public getOdataContextEntity(): any {
     return {
+      name: this.getName(),
       key: "id",
       keyType: "Int32",
       fieldTypes: {
@@ -42,8 +41,12 @@ export class Utente extends Entity {
         passwordHash: "String",
         telefono: "String",
         bitRuoli: "Int32",
-        idAzienda: new OdataForeignKey(ENTITIES.Azienda, "id")
+        idAzienda: new OdataForeignKey(new Azienda().getName(), "id")
       }
     };
+  }
+
+  public getName(): string {
+    return "Utentes";
   }
 }

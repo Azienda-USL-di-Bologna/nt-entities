@@ -1,8 +1,4 @@
-import {Azienda} from "./azienda";
-import {Ruolo} from "./ruolo";
-import {ENTITIES} from "../declarations";
-import {Entity} from "@bds/nt-angular-context/entity";
-import {OdataForeignKey} from "@bds/nt-angular-context/server-object";
+import {Entity} from "@bds/nt-angular-context";
 
 export class Persona extends Entity {
   public id: number;
@@ -14,8 +10,9 @@ export class Persona extends Entity {
   public descrizione: string;
   public bitRuoli: number;
 
-  public static getOdataContextEntity(): any {
+  public getOdataContextEntity(): any {
     return {
+      name: this.getName(),
       key: "id",
       keyType: "Int32",
       fieldTypes: {
@@ -28,5 +25,9 @@ export class Persona extends Entity {
         bitRuoli: "Int32"
       }
     };
+  }
+
+  public getName(): string {
+    return "Personas";
   }
 }

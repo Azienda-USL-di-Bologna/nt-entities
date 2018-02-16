@@ -1,6 +1,6 @@
 import {Struttura} from "./struttura";
 import {AziendaTipoProcedimento} from "./azienda-tipo-procedimento";
-import {Entity} from "@bds/nt-angular-context/entity";
+import {Entity} from "@bds/nt-angular-context";
 
 export class Azienda extends Entity {
   public id: number;
@@ -14,8 +14,9 @@ export class Azienda extends Entity {
   public strutturaList: Struttura[];
   public aziendaTipoProcedimentoList: AziendaTipoProcedimento[];
 
-  public static getOdataContextEntity(): any {
+  public getOdataContextEntity(): any {
     return {
+      name: this.getName(),
       key: "id",
       keyType: "Int32",
       fieldTypes: {
@@ -29,5 +30,9 @@ export class Azienda extends Entity {
         parametri: "String"
       }
     };
+  }
+
+  public getName(): string {
+    return "Aziendas";
   }
 }

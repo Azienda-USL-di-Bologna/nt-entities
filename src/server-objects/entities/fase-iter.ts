@@ -1,4 +1,4 @@
-import {Entity} from "@bds/nt-angular-context/entity";
+import {Entity} from "@bds/nt-angular-context";
 import { Iter } from "./iter";
 import { Fase } from "./fase";
 
@@ -11,8 +11,9 @@ export class FaseIter extends Entity {
     public dataInizioFase: Date;
     public dataFineFase: Date;
 
-    public static getOdataContextEntity(): any {
+    public getOdataContextEntity(): any {
         return {
+            name: this.getName(),
             key: "id",
             keyTypes: "Int32",
             fieldsTypes: {
@@ -23,5 +24,9 @@ export class FaseIter extends Entity {
                 dataFineFase: "DateTime"
             }
         };
+    }
+
+    public getName(): string {
+        return "FaseIters";
     }
 }

@@ -1,9 +1,7 @@
-import { Entity } from "@bds/nt-angular-context/entity";
+import { Entity, OdataForeignKey } from "@bds/nt-angular-context";
 import { Evento } from "./evento";
 import { Iter } from "./iter";
 import { FaseIter } from "./fase-iter";
-import { OdataForeignKey } from "@bds/nt-angular-context/server-object";
-import {ENTITIES} from "../declarations";
 import { DocumentoIter } from "./documento-iter";
 import { Utente } from "./utente";
 
@@ -22,20 +20,25 @@ export class EventoIter extends Entity {
   public FK_autore: number;
   public note: string;
 
-  public static getOdataContextEntity(): any {
+  public getOdataContextEntity(): any {
     return {
+      name: this.getName(),
       key: "id",
       keyType: "Int32",
       fieldTypes: {
         id: "Int32",
-        idEvento: new OdataForeignKey(ENTITIES.Evento, "id"),
-        idIter: new OdataForeignKey(ENTITIES.Iter, "id"),
-        idFaseIter: new OdataForeignKey(ENTITIES.FaseIter, "id"),
-        idDocumentoIter: new OdataForeignKey(ENTITIES.DocumentoIter, "id"),
+        idEvento: new OdataForeignKey(new Evento().getName(), "id"),
+        idIter: new OdataForeignKey(new Iter().getName(), "id"),
+        idFaseIter: new OdataForeignKey(new FaseIter().getName(), "id"),
+        idDocumentoIter: new OdataForeignKey(new DocumentoIter().getName(), "id"),
         dataOraEvento: "DateTime",
-        autore: new OdataForeignKey(ENTITIES.Utente, "id"),
+        autore: new OdataForeignKey(new Utente().getName(), "id"),
         note: "String"
       }
     };
+  }
+
+  public getName(): string {
+    return "EventoIters";
   }
 }

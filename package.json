@@ -48,7 +48,7 @@
     "@angular/common": "~4",
     "@angular/core": "~4",
     "@angular/forms": "~4",
-    "@bds/nt-angular-context": "latest",
+    "@bds/nt-angular-context": "^1.0.40",
     "@types/node": "^8.9.3",
     "ajv": "^6.1.1",
     "devextreme": "~17",
@@ -64,7 +64,6 @@
     "@compodoc/compodoc": "^1.0.0-beta.9",
     "@types/jasmine": "^2.5.47",
     "@types/karma": "^1.7.0",
-    "@types/node": "^8.0.0",
     "@types/webpack": "^3.0.13",
     "@types/webpack-env": "^1.13.0",
     "angular2-template-loader": "^0.6.2",
@@ -107,7 +106,8 @@
   "distPeerDependencies": {
     "@angular/common": "~4",
     "@angular/core": "~4",
-    "tslint": "~5"
+    "tslint": "~5",
+    "@bds/nt-angular-context": "1.0.40"
   },
   "distDependencies": {}
 }

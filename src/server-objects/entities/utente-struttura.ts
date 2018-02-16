@@ -1,9 +1,7 @@
-import {Entity} from "@bds/nt-angular-context/entity";
+import {Entity, OdataForeignKey} from "@bds/nt-angular-context";
 import {AfferenzaStruttura} from "./afferenza-struttura";
 import {Struttura} from "./struttura";
 import {Utente} from "./utente";
-import {ENTITIES} from "../declarations";
-import {OdataForeignKey} from "@bds/nt-angular-context/server-object";
 
 export class UtenteStruttura extends Entity {
   public id: number;
@@ -11,16 +9,21 @@ export class UtenteStruttura extends Entity {
   public idStruttura: Struttura;
   public idUtente: Utente;
 
-  public static getOdataContextEntity(): any {
+  public getOdataContextEntity(): any {
     return {
+      name: this.getName(),
       key: "id",
       keyType: "Int32",
       fieldTypes: {
         id: "Int32",
-        idAfferenzaStruttura: new OdataForeignKey(ENTITIES.AfferenzaStruttura, "id"),
-        idStruttura: new OdataForeignKey(ENTITIES.Struttura, "id"),
-        idUtente: new OdataForeignKey(ENTITIES.Utente, "id")
+        idAfferenzaStruttura: new OdataForeignKey(new AfferenzaStruttura().getName(), "id"),
+        idStruttura: new OdataForeignKey(new Struttura().getName(), "id"),
+        idUtente: new OdataForeignKey(new Utente().getName(), "id")
       }
     };
+  }
+
+  public getName(): string {
+    return "UtenteStrutturas";
   }
 }

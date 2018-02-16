@@ -1,6 +1,4 @@
-import { Entity } from "@bds/nt-angular-context/entity";
-import {ENTITIES} from "../declarations";
-import { OdataForeignKey } from "@bds/nt-angular-context/server-object";
+import { Entity, OdataForeignKey } from "@bds/nt-angular-context";
 import { FaseIter } from "./fase-iter";
 
 export class Fase extends Entity {
@@ -11,8 +9,9 @@ export class Fase extends Entity {
 //   iterList: Iter[];
   public fasiIter: FaseIter[];
 
-  public static getOdataContextEntity(): any {
+  public getOdataContextEntity(): any {
     return {
+      name: this.getName(),
       key: "id",
       keyType: "Int32",
       fieldTypes: {
@@ -22,5 +21,9 @@ export class Fase extends Entity {
         faseDiChiusura: "Boolean"
       }
     };
+  }
+
+  public getName(): string {
+    return "Fases";
   }
 }

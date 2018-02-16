@@ -1,9 +1,7 @@
-import { Entity } from "@bds/nt-angular-context/entity";
+import { Entity, OdataForeignKey } from "@bds/nt-angular-context";
 import { Utente } from "./utente";
 import { AziendaTipoProcedimento } from "./azienda-tipo-procedimento";
 import { Struttura } from "./struttura";
-import { OdataForeignKey } from "@bds/nt-angular-context/server-object";
-import {ENTITIES} from "../declarations";
 
 export class Procedimento extends Entity {
   public id: number;
@@ -19,15 +17,16 @@ export class Procedimento extends Entity {
   public modalitaInfo: string;
   public descrizioneAtti: string;
 
-  public static getOdataContextEntity(): any {
+  public getOdataContextEntity(): any {
     return {
+      name: this.getName(),
       key: "id",
       keyType: "Int32",
       fieldTypes: {
         id: "Int32",
-        idTitolarePotereSostitutivo: new OdataForeignKey(ENTITIES.Utente, "id"),
-        idAziendaTipoProcedimento: new OdataForeignKey(ENTITIES.AziendaTipoProcedimento, "id"),
-        idStruttura: new OdataForeignKey(ENTITIES.Struttura, "id"),
+        idTitolarePotereSostitutivo: new OdataForeignKey(new Utente().getName(), "id"),
+        idAziendaTipoProcedimento: new OdataForeignKey(new AziendaTipoProcedimento().getName(), "id"),
+        idStruttura: new OdataForeignKey(new Struttura().getName(), "id"),
         dataInizio: "DateTime",
         dataFine: "DateTime",
         ufficio: "String",
@@ -35,5 +34,9 @@ export class Procedimento extends Entity {
         descrizioneAtti: "String"
       }
     };
+  }
+
+  public getName(): string {
+    return "Procedimentos";
   }
 }

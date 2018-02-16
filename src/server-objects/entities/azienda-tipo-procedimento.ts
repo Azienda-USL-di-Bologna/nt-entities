@@ -1,15 +1,13 @@
 import {Azienda} from "./azienda";
 import {TipoProcedimento} from "./tipo-procedimento";
 import {Titolo} from "./titolo";
-import {OdataForeignKey} from "@bds/nt-angular-context/server-object";
-import {ENTITIES} from "../declarations";
-import {Entity} from "@bds/nt-angular-context/entity";
+import {Entity, OdataForeignKey} from "@bds/nt-angular-context";
 
 export class AziendaTipoProcedimento extends Entity {
     public id: number;
+    public descrizioneTipoProcedimento: string;
     public dataFine: Date;
     public dataInizio: Date;
-    public descrizioneTipoProcedimento: string;
     public durataMassimaProcedimento: number;
     public durataMassimaSospensione: number;
     public obbligoEsitoConclusivo: boolean;
@@ -19,10 +17,12 @@ export class AziendaTipoProcedimento extends Entity {
     public idTipoProcedimento: TipoProcedimento;
     public FK_id_titolo: number;
     public idTitolo: Titolo;
-    public procedimentoList: Titolo[];
+    // public procedimentoList: Titolo[];
 
-    public static getOdataContextEntity(): any {
+
+    public getOdataContextEntity(): any {
         return {
+            name: this.getName(),
             key: "id",
             keyType: "Int32",
             fieldTypes: {
@@ -33,10 +33,13 @@ export class AziendaTipoProcedimento extends Entity {
                 durataMassimaProcedimento: "Int32",
                 durataMassimaSospensione: "Int32",
                 obbligoEsitoConclusivo: "Boolean",
-                idAzienda: new OdataForeignKey(ENTITIES.Azienda, "id"),
-                idTipoProcedimento: new OdataForeignKey(ENTITIES.TipoProcedimento, "id"),
-                idTitolo: new OdataForeignKey(ENTITIES.Titolo, "id")
+                idAzienda: new OdataForeignKey(new Azienda().getName(), "id"),
+                idTipoProcedimento: new OdataForeignKey(new TipoProcedimento().getName(), "id"),
+                idTitolo: new OdataForeignKey(new Titolo().getName(), "id")
             }
         };
+    }
+    public getName(): string {
+        return "AziendaTipoProcedimentos";
     }
 }

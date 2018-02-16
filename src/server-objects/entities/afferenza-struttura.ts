@@ -1,19 +1,24 @@
-import {Entity} from "@bds/nt-angular-context/entity";
+import {Entity} from "@bds/nt-angular-context";
 
 export class AfferenzaStruttura extends Entity {
   public id: number;
   public descrizione: string;
   public codice: string;
 
-  public static getOdataContextEntity(): any {
+  public getOdataContextEntity(): any {
     return {
-      key: "id",
-      keyType: "Int32",
-      fieldTypes: {
-        id: "Int32",
-        descrizione: "String",
-        codice: "String"
-      }
+        name: this.getName(),
+        key: "id",
+        keyType: "Int32",
+        fieldTypes: {
+            id: "Int32",
+            descrizione: "String",
+            codice: "String"
+        }
     };
+  }
+
+  public getName(): string {
+    return "AfferenzaStrutturas";
   }
 }

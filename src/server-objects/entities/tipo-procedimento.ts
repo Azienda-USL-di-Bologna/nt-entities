@@ -1,4 +1,4 @@
-import {Entity} from "@bds/nt-angular-context/entity";
+import {Entity} from "@bds/nt-angular-context";
 
 export class TipoProcedimento extends Entity {
     public id: number;
@@ -14,8 +14,9 @@ export class TipoProcedimento extends Entity {
     public obbligoEsitoConclusivo: boolean;
     public pubblicazioneRegistroAccessi: boolean;
 
-    public static getOdataContextEntity(): any {
+    public getOdataContextEntity(): any {
         return {
+            name: this.getName(),
             key: "id",
             keyType: "Int32",
             fieldTypes: {
@@ -33,5 +34,9 @@ export class TipoProcedimento extends Entity {
                 pubblicazioneRegistroAccessi: "Boolean"
             }
         };
+    }
+
+    public getName(): string {
+        return "TipoProcedimentos";
     }
 }

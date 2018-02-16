@@ -1,7 +1,5 @@
-import { Entity } from "@bds/nt-angular-context/entity";
+import { Entity, OdataForeignKey } from "@bds/nt-angular-context";
 import { Iter } from "./iter";
-import { OdataForeignKey } from "@bds/nt-angular-context/server-object";
-import {ENTITIES} from "../declarations";
 
 export class DocumentoIter extends Entity {
   public id: number;
@@ -11,8 +9,9 @@ export class DocumentoIter extends Entity {
   public idIter: Iter;
   public FK_id_iter: number;
 
-  public static getOdataContextEntity(): any {
+  public getOdataContextEntity(): any {
     return {
+      name: this.getName(),
       key: "id",
       keyType: "Int32",
       fieldTypes: {
@@ -20,8 +19,12 @@ export class DocumentoIter extends Entity {
         numeroRegistro: "String",
         anno: "Int32",
         registro: "String",
-        idIter: new OdataForeignKey(ENTITIES.Iter, "id")
+        idIter: new OdataForeignKey(new Iter().getName(), "id")
       }
     };
+  }
+
+  public getName(): string {
+    return "DocumentoIters";
   }
 }

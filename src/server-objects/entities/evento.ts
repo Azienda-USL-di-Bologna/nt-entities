@@ -1,12 +1,13 @@
-import { Entity } from "@bds/nt-angular-context/entity";
+import { Entity } from "@bds/nt-angular-context";
 
 export class Evento extends Entity {
   public id: number;
   public nome: string;
   public codice: string;
 
-  public static getOdataContextEntity(): any {
+  public getOdataContextEntity(): any {
     return {
+      name: this.getName(),
       key: "id",
       keyType: "Int32",
       fieldTypes: {
@@ -15,5 +16,9 @@ export class Evento extends Entity {
         codice: "String"
       }
     };
+  }
+
+  public getName(): string {
+    return "Eventos";
   }
 }

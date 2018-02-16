@@ -1,6 +1,4 @@
-import { Entity } from "@bds/nt-angular-context/entity";
-import {ENTITIES} from "../declarations";
-import { OdataForeignKey } from "@bds/nt-angular-context/server-object";
+import { Entity, OdataForeignKey } from "@bds/nt-angular-context";
 import { FaseIter } from "./fase-iter";
 import { Utente } from "./utente";
 import { Fase } from "./fase";
@@ -39,13 +37,14 @@ export class Iter extends Entity {
   public procedimentoCache: ProcedimentoCache;
   public dataChiusuraPrevista: Date;
 
-  public static getOdataContextEntity(): any {
+  public getOdataContextEntity(): any {
     return {
+        name: this.getName(),
       key: "id",
       keyType: "Int32",
       fieldTypes: {
         id: "Int32",
-        idResponsabileProcedimento: new OdataForeignKey(ENTITIES.Utente, "id"),
+        idResponsabileProcedimento: new OdataForeignKey(new Utente().getName(), "id"),
         numero: "Int32",
         anno: "Int32",
         oggetto: "String",
@@ -67,11 +66,15 @@ export class Iter extends Entity {
         motivoDerogaDurata: "String",
         derogaSospensione: "Int32",
         motivoDerogaSospensione: "String",
-        idResponsabileAdozioneProcedimentoFinale: new OdataForeignKey(ENTITIES.Utente, "id"),
-        idFaseCorrente: new OdataForeignKey(ENTITIES.Fase, "id"),
-        idIterPrecedente: new OdataForeignKey(ENTITIES.Iter, "id"),
-        procedimentoCache: new OdataForeignKey(ENTITIES.ProcedimentoCache, "id")
+        idResponsabileAdozioneProcedimentoFinale: new OdataForeignKey(new Utente().getName(), "id"),
+        idFaseCorrente: new OdataForeignKey(new Fase().getName(), "id"),
+        idIterPrecedente: new OdataForeignKey(this.getName(), "id"),
+        procedimentoCache: new OdataForeignKey(new ProcedimentoCache().getName(), "id")
       }
     };
+  }
+
+  public getName(): string {
+    return "Iters";
   }
 }

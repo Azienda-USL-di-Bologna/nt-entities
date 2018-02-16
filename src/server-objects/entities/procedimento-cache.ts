@@ -1,6 +1,4 @@
-import { Entity } from "@bds/nt-angular-context/entity";
-import {ENTITIES} from "../declarations";
-import { OdataForeignKey } from "@bds/nt-angular-context/server-object";
+import { Entity, OdataForeignKey } from "@bds/nt-angular-context";
 import { Utente } from "./utente";
 import { Struttura } from "./struttura";
 import { Iter } from "./iter";
@@ -15,19 +13,24 @@ export class ProcedimentoCache extends Entity {
   public durataMasiimaSospensione: number;
   public iter: Iter;
 
-  public static getOdataContextEntity(): any {
+  public getOdataContextEntity(): any {
     return {
+      name: this.getName(),
       key: "id",
       keyType: "Int32",
       fieldTypes: {
         id: "Int32",
         nomeTipoProcedimento: "String",
         descrizioneTipoProcedimento: "String",
-        idStruttura: new OdataForeignKey(ENTITIES.Struttura, "id"),
-        idTitolarePotereSostitutivo: new OdataForeignKey(ENTITIES.Utente, "id"),
+        idStruttura: new OdataForeignKey(new Struttura().getName(), "id"),
+        idTitolarePotereSostitutivo: new OdataForeignKey(new Utente().getName(), "id"),
         durataMassimaProcedimento: "Int32",
         durataMassimaSospensione: "Int32"
       }
     };
+  }
+
+  public getName(): string {
+    return "ProcedimentoCaches";
   }
 }

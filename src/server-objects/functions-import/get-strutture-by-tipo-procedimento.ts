@@ -1,9 +1,13 @@
-import {FunctionImport} from "@bds/nt-angular-context/function-import";
+import {FunctionImport} from "@bds/nt-angular-context";
 
 export class GetStruttureByTipoProcedimento extends FunctionImport {
 
-  public static getOdataContextEntity(): any {
+  public getOdataContextEntity(): any {
     return {
     };
+  }
+
+  public getName(): string {
+    return "";
   }
 }
