@@ -23,5 +23,6 @@ export { Utente } from "./server-objects/entities/utente";
 export { UtenteStruttura } from "./server-objects/entities/utente-struttura";
 
 export { GetStruttureByTipoProcedimento } from "./server-objects/functions-import/get-strutture-by-tipo-procedimento";
+export { GetIterUtente } from "./server-objects/functions-import/get-iter-utente";
 
-export { RUOLI, CODICE_AFFERENZA_STRUTTURA, bUtente, bStruttura, bAzienda, BusinessObjectKeyNames } from "./server-objects/declarations";
+export { RUOLI, CODICE_AFFERENZA_STRUTTURA, bUtente, bStruttura, bAzienda, bRuolo, BusinessObjectKeyNames } from "./server-objects/declarations";

@@ -1,6 +1,6 @@
 import {FunctionImport} from "@bds/nt-angular-context";
 
-export class GetStruttureByTipoProcedimento extends FunctionImport {
+export class GetIterUtente extends FunctionImport {
 
   public getOdataContextEntity(): any {
     return {
@@ -8,6 +8,6 @@ export class GetStruttureByTipoProcedimento extends FunctionImport {
   }
 
   public getName(): string {
-    return "GetStruttureByTipoProcedimento";
+        return "GetIterUtente";
   }
 }

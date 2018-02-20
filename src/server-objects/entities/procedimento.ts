@@ -7,6 +7,8 @@ export class Procedimento extends Entity {
   public id: number;
   public idTitolarePotereSostitutivo: Utente;
   public FK_id_titolare_potere_sostitutivo: number;
+  public idStrutturaTitolarePotereSostitutivo: Struttura;
+  public FK_id_struttura_titolare_potere_sostitutivo: number;
   public idAziendaTipoProcedimento: AziendaTipoProcedimento;
   public FK_id_azienda_tipo_procedimento: number;
   public idStruttura: Struttura;
@@ -16,6 +18,9 @@ export class Procedimento extends Entity {
   public ufficio: string;
   public modalitaInfo: string;
   public descrizioneAtti: string;
+  public idResponsabileAdozioneAttoFinale: Utente;
+  public FK_id_responsabile_adozione_atto_finale: number;
+  public idStrutturaResponsabileAdozioneAttoFinale: Struttura;
 
   public getOdataContextEntity(): any {
     return {
@@ -25,13 +30,16 @@ export class Procedimento extends Entity {
       fieldTypes: {
         id: "Int32",
         idTitolarePotereSostitutivo: new OdataForeignKey(new Utente().getName(), "id"),
+        idStrutturaTitolarePotereSostitutivo: new OdataForeignKey(new Struttura().getName(), "id"),
         idAziendaTipoProcedimento: new OdataForeignKey(new AziendaTipoProcedimento().getName(), "id"),
         idStruttura: new OdataForeignKey(new Struttura().getName(), "id"),
         dataInizio: "DateTime",
         dataFine: "DateTime",
         ufficio: "String",
         modalitaInfo: "String",
-        descrizioneAtti: "String"
+        descrizioneAtti: "String",
+        idResponsabileAdozioneAttoFinale: new OdataForeignKey(new Utente().getName(), "id"),
+        idStrutturaResponsabileAdozioneAttoFinale: new OdataForeignKey(new Struttura().getName(), "id")
       }
     };
   }
