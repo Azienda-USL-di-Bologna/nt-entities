@@ -1,4 +1,4 @@
-import {FunctionImport} from "@bds/nt-angular-context";
+import {FunctionImport} from "@bds/nt-context";
 
 export class GetIterUtente extends FunctionImport {
 

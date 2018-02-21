@@ -1,4 +1,4 @@
-import { Entity, OdataForeignKey } from "@bds/nt-angular-context";
+import { Entity, OdataForeignKey } from "@bds/nt-context";
 import { FaseIter } from "./fase-iter";
 import { Utente } from "./utente";
 import { Fase } from "./fase";

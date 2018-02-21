@@ -1,4 +1,4 @@
-import {Entity, OdataForeignKey} from "@bds/nt-angular-context";
+import {Entity, OdataForeignKey} from "@bds/nt-context";
 import {AfferenzaStruttura} from "./afferenza-struttura";
 import {Struttura} from "./struttura";
 import {Utente} from "./utente";

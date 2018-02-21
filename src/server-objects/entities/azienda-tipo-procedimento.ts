@@ -1,7 +1,7 @@
 import {Azienda} from "./azienda";
 import {TipoProcedimento} from "./tipo-procedimento";
 import {Titolo} from "./titolo";
-import {Entity, OdataForeignKey} from "@bds/nt-angular-context";
+import {Entity, OdataForeignKey} from "@bds/nt-context";
 
 export class AziendaTipoProcedimento extends Entity {
     public id: number;
@@ -17,7 +17,7 @@ export class AziendaTipoProcedimento extends Entity {
     public idTipoProcedimento: TipoProcedimento;
     public FK_id_titolo: number;
     public idTitolo: Titolo;
-    // public procedimentoList: Titolo[];
+    public procedimentoList: Titolo[];
 
 
     public getOdataContextEntity(): any {

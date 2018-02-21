@@ -1,5 +1,5 @@
 import {Azienda} from "./azienda";
-import {Entity, OdataForeignKey} from "@bds/nt-angular-context";
+import {Entity, OdataForeignKey} from "@bds/nt-context";
 
 export class Utente extends Entity {
   public id: number;

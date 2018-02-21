@@ -1,4 +1,4 @@
-import {Entity} from "@bds/nt-angular-context";
+import {Entity} from "@bds/nt-context";
 import { Iter } from "./iter";
 import { Fase } from "./fase";
 

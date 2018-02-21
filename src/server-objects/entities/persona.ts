@@ -1,4 +1,4 @@
-import {Entity} from "@bds/nt-angular-context";
+import {Entity} from "@bds/nt-context";
 
 export class Persona extends Entity {
   public id: number;

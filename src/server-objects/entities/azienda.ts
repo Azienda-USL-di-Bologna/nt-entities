@@ -1,6 +1,6 @@
 import {Struttura} from "./struttura";
 import {AziendaTipoProcedimento} from "./azienda-tipo-procedimento";
-import {Entity} from "@bds/nt-angular-context";
+import {Entity} from "@bds/nt-context";
 
 export class Azienda extends Entity {
   public id: number;
