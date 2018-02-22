@@ -21,6 +21,7 @@ export class Procedimento extends Entity {
   public idResponsabileAdozioneAttoFinale: Utente;
   public FK_id_responsabile_adozione_atto_finale: number;
   public idStrutturaResponsabileAdozioneAttoFinale: Struttura;
+  public strumenti: string;
 
   public getOdataContextEntity(): any {
     return {
@@ -39,7 +40,8 @@ export class Procedimento extends Entity {
         modalitaInfo: "String",
         descrizioneAtti: "String",
         idResponsabileAdozioneAttoFinale: new OdataForeignKey(new Utente().getName(), "id"),
-        idStrutturaResponsabileAdozioneAttoFinale: new OdataForeignKey(new Struttura().getName(), "id")
+        idStrutturaResponsabileAdozioneAttoFinale: new OdataForeignKey(new Struttura().getName(), "id"),
+        strumenti: "String"
       }
     };
   }
