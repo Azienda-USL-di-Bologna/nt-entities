@@ -19,6 +19,8 @@ export class AziendaTipoProcedimento extends Entity {
     public idTitolo: Titolo;
     public procedimentoList: Titolo[];
     public giorniPreavvisoScadenzaTermini: number;
+    public regolamentiRiferimentiInterni: string;
+
 
 
     public getOdataContextEntity(): any {
@@ -37,7 +39,8 @@ export class AziendaTipoProcedimento extends Entity {
                 idAzienda: new OdataForeignKey(new Azienda().getName(), "id"),
                 idTipoProcedimento: new OdataForeignKey(new TipoProcedimento().getName(), "id"),
                 idTitolo: new OdataForeignKey(new Titolo().getName(), "id"),
-                giorniPreavvisoScadenzaTermini: "Int32"
+                giorniPreavvisoScadenzaTermini: "Int32",
+                regolamentiRiferimentiInterni: "String"
             }
         };
     }
