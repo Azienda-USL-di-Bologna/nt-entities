@@ -1,6 +1,6 @@
 {
   "name": "@bds/nt-entities",
-  "version": "0.0.2",
+  "version": "1.0.2",
   "description": "entities collection",
   "keywords": [
     "angular",
@@ -48,7 +48,7 @@
     "@angular/common": "~4",
     "@angular/core": "~4",
     "@angular/forms": "~4",
-    "@bds/nt-context": "latest",
+    "@bds/nt-context": "~1",
     "@bds/package-dist-creator": "latest",
     "@types/node": "^8.9.3",
     "ajv": "^6.1.1",
@@ -62,6 +62,7 @@
     "@angular/platform-browser": "^4.4.6",
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/router": "~4",
+    "@bds/package-dist-creator": "latest",
     "@compodoc/compodoc": "^1.0.0-beta.9",
     "@types/jasmine": "^2.5.47",
     "@types/karma": "^1.7.0",
@@ -73,7 +74,7 @@
     "codelyzer": "^3.0.1",
     "concurrently": "^3.4.0",
     "cpx": "~1",
-    "css-loader": "^0.28.1",
+    "css-loader": "^0.28.10",
     "gh-pages": "^1.0.0",
     "gulp": "^3.9.1",
     "gulp-inline-ng2-template": "^4.0.0",
@@ -89,7 +90,6 @@
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^2.0.3",
     "node-sass": "^4.7.2",
-    "@bds/package-dist-creator": "latest",
     "raw-loader": "^0.5.1",
     "rimraf": "^2.6.1",
     "rxjs": "^5.3.1",
@@ -108,7 +108,7 @@
     "@angular/common": "~4",
     "@angular/core": "~4",
     "tslint": "~5",
-    "@bds/nt-context": "1.0.40"
+    "@bds/nt-context": "~1"
   },
   "distDependencies": {}
 }
