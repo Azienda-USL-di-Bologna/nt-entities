@@ -11,7 +11,7 @@ export interface BusinessObjectKeyNames {
 export const bUtente: BusinessObjectKeyNames = {
     aziende: "AZIENDE",
     bitRuoliPersona: "BIT_RUOLI_PERSONA",
-    idUtente: "IDUTENTE",
+    id: "ID",
     aziendaLogin: "AZIENDA_LOGIN",
     username: "USERNAME",
     struttureAfferenzaFunzionale: "STRUTTURE_AFFERENZA_FUNZIONALE",

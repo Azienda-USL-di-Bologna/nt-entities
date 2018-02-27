@@ -1,6 +1,6 @@
 {
   "name": "@bds/nt-entities",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "entities collection",
   "keywords": [
     "angular",
@@ -56,11 +56,10 @@
     "devextreme-angular": "~17"
   },
   "devDependencies": {
-    "@angular/compiler": "^4.0.0",
-    "@angular/compiler-cli": "^4.0.0",
-    "@angular/core": "^4.0.0",
-    "@angular/platform-browser": "^4.4.6",
-    "@angular/platform-browser-dynamic": "^4.0.0",
+    "@angular/compiler": "~4",
+    "@angular/compiler-cli": "~4",
+    "@angular/platform-browser": "~4",
+    "@angular/platform-browser-dynamic": "~4",
     "@angular/router": "~4",
     "@bds/package-dist-creator": "latest",
     "@compodoc/compodoc": "^1.0.0-beta.9",
