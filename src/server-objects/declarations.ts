@@ -17,7 +17,10 @@ export const bUtente: BusinessObjectKeyNames = {
     struttureAfferenzaFunzionale: "STRUTTURE_AFFERENZA_FUNZIONALE",
     bitRuoliUtente: "BIT_RUOLI_UTENTE",
     struttureAfferenzaDiretta: "STRUTTURE_AFFERENZA_DIRETTA",
-    ruoli: "RUOLI"
+    ruoli: "RUOLI",
+    codiceFiscale: "CODICE_FISCALE",
+    nome: "NOME",
+    cognome: "COGNOME"
 };
 
 export const bAzienda: BusinessObjectKeyNames = {
