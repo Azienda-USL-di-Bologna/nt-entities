@@ -1,19 +1,20 @@
-import {Azienda} from "./azienda";
-import {Entity, OdataForeignKey} from "@bds/nt-context";
+import { Azienda } from "./azienda";
+import { Entity, OdataForeignKey } from "@bds/nt-context";
+import { Persona } from "./persona";
 
 export class Utente extends Entity {
   public id: number;
   public attivo: boolean;
-  public codiceFiscale: string;
-  public codiceStruttura: string;
-  public cognome: string;
-  public descrizione: string;
+  /* public codiceFiscale: string; */
+  /* public codiceStruttura: string; */
+  /* public cognome: string;
+  public descrizione: string; */
   public dominio: number;
   public email: string;
   public fax: string;
   public idInquadramento: number;
-  public matricola: string;
-  public nome: string;
+  /* public matricola: string;
+  public nome: string; */
   public omonimia: boolean;
   public passwordHash: string;
   public telefono: string;
@@ -21,6 +22,8 @@ export class Utente extends Entity {
   public FK_id_azienda: number;
   public idAzienda: Azienda;
   public bitRuoli: number;
+  public idPersona: Persona;
+  public FK_id_persona: number;
 
   public getOdataContextEntity(): any {
     return {
@@ -31,8 +34,8 @@ export class Utente extends Entity {
         id: "Int32",
         username: "String",
         attivo: "Boolean",
-        codiceStruttura: "String",
-        descrizione: "String",
+        /* codiceStruttura: "String", */
+        /* descrizione: "String", */
         dominio: "String",
         email: "String",
         fax: "String",
@@ -41,7 +44,8 @@ export class Utente extends Entity {
         passwordHash: "String",
         telefono: "String",
         bitRuoli: "Int32",
-        idAzienda: new OdataForeignKey(new Azienda().getName(), "id")
+        idAzienda: new OdataForeignKey(new Azienda().getName(), "id"),
+        idPersona: new OdataForeignKey(new Persona().getName(), "id")
       }
     };
   }

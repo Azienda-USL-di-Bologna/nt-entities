@@ -1,6 +1,6 @@
 {
   "name": "@bds/nt-entities",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "entities collection",
   "keywords": [
     "angular",
@@ -48,7 +48,7 @@
     "@angular/common": "~4",
     "@angular/core": "~4",
     "@angular/forms": "~4",
-    "@bds/nt-context": "~1",
+    "@bds/nt-context": "latest",
     "@bds/package-dist-creator": "latest",
     "@types/node": "^8.9.3",
     "ajv": "^6.1.1",

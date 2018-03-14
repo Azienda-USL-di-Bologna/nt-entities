@@ -24,6 +24,6 @@ export { UtenteStruttura } from "./server-objects/entities/utente-struttura";
 
 export { GetStruttureByTipoProcedimento } from "./server-objects/functions-import/get-strutture-by-tipo-procedimento";
 export { GetIterUtente } from "./server-objects/functions-import/get-iter-utente";
-export { GetUtentiGerarchiaStruttura } from "./server-objects/functions-import/get-utenti-gerarchia-struttura"
+export { GetUtentiGerarchiaStruttura } from "./server-objects/functions-import/get-utenti-gerarchia-struttura";
 
 export { RUOLI, CODICE_AFFERENZA_STRUTTURA, bUtente, bStruttura, bAzienda, bRuolo, BusinessObjectKeyNames } from "./server-objects/declarations";
