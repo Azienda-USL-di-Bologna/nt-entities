@@ -1,4 +1,4 @@
-import {Azienda} from "./azienda";
+import {Azienda} from "../baborg/azienda";
 import {TipoProcedimento} from "./tipo-procedimento";
 import {Titolo} from "./titolo";
 import {Entity, OdataForeignKey} from "@bds/nt-context";

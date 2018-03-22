@@ -1,7 +1,7 @@
 import { Entity, OdataForeignKey } from "@bds/nt-context";
-import { Utente } from "./utente";
+import { Utente } from "../baborg/utente";
 import { AziendaTipoProcedimento } from "./azienda-tipo-procedimento";
-import { Struttura } from "./struttura";
+import { Struttura } from "../baborg/struttura";
 
 export class Procedimento extends Entity {
   public id: number;

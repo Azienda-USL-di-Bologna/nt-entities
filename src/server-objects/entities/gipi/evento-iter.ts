@@ -3,7 +3,7 @@ import { Evento } from "./evento";
 import { Iter } from "./iter";
 import { FaseIter } from "./fase-iter";
 import { DocumentoIter } from "./documento-iter";
-import { Utente } from "./utente";
+import { Utente } from "../baborg/utente";
 
 export class EventoIter extends Entity {
   public id: number;

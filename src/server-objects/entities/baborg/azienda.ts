@@ -1,6 +1,7 @@
 import {Struttura} from "./struttura";
-import {AziendaTipoProcedimento} from "./azienda-tipo-procedimento";
+
 import {Entity} from "@bds/nt-context";
+import {AziendaTipoProcedimento} from "../gipi/azienda-tipo-procedimento";
 
 export class Azienda extends Entity {
   public id: number;

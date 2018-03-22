@@ -1,8 +1,8 @@
 import { Entity, OdataForeignKey } from "@bds/nt-context";
 import { FaseIter } from "./fase-iter";
-import { Utente } from "./utente";
+import { Utente } from "../baborg/utente";
 import { Fase } from "./fase";
-import { Stato } from "./stato"
+import { Stato } from "./stato";
 import { ProcedimentoCache } from "./procedimento-cache";
 
 export class Iter extends Entity {

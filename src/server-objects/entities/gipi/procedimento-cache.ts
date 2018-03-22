@@ -1,6 +1,6 @@
 import { Entity, OdataForeignKey } from "@bds/nt-context";
-import { Utente } from "./utente";
-import { Struttura } from "./struttura";
+import { Utente } from "../baborg/utente";
+import { Struttura } from "../baborg/struttura";
 import { Iter } from "./iter";
 
 export class ProcedimentoCache extends Entity {

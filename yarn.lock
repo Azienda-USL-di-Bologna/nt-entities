@@ -58,9 +58,9 @@
   dependencies:
     tsickle "^0.21.0"
 
-"@bds/nt-context@~1":
-  version "1.0.40"
-  resolved "http://gdml.internal.ausl.bologna.it:4873/@bds%2fnt-context/-/nt-context-1.0.40.tgz#40f442dcdcfe320f627610139460c8c76e84de34"
+"@bds/nt-context@latest":
+  version "1.0.45"
+  resolved "http://gdml.internal.ausl.bologna.it:4873/@bds%2fnt-context/-/nt-context-1.0.45.tgz#f090986e3ffba2129ffe1b59da4621f123b2a21f"
   dependencies:
     moment "~2"
 
