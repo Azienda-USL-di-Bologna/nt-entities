@@ -17,6 +17,7 @@ export { Procedimento } from "./server-objects/entities/procedimento";
 export { ProcedimentoCache } from "./server-objects/entities/procedimento-cache";
 export { Ruolo } from "./server-objects/entities/ruolo";
 export { Struttura } from "./server-objects/entities/struttura";
+export { Stato } from "./server-objects/entities/stato"
 export { TipoProcedimento } from "./server-objects/entities/tipo-procedimento";
 export { Titolo } from "./server-objects/entities/titolo";
 export { Utente } from "./server-objects/entities/utente";

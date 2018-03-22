@@ -2,6 +2,7 @@ import { Entity, OdataForeignKey } from "@bds/nt-context";
 import { FaseIter } from "./fase-iter";
 import { Utente } from "./utente";
 import { Fase } from "./fase";
+import { Stato } from "./stato"
 import { ProcedimentoCache } from "./procedimento-cache";
 
 export class Iter extends Entity {
@@ -11,7 +12,8 @@ export class Iter extends Entity {
   public numero: number;
   public anno: number;
   public oggetto: string;
-  public stato: string;
+  public idStato: Stato;
+  public FK_stato: number;
   public dataCreazione: Date;
   public dataAvvio: Date;
   public dataChiusura: Date;
@@ -48,7 +50,7 @@ export class Iter extends Entity {
         numero: "Int32",
         anno: "Int32",
         oggetto: "String",
-        stato: "String",
+        idStato: "Int32",
         dataCreazione: "DateTime",
         dataAvvio: "DateTime",
         dataChiusura: "DateTime",
