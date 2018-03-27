@@ -2,6 +2,7 @@ import {Azienda} from "../baborg/azienda";
 import {TipoProcedimento} from "./tipo-procedimento";
 import {Titolo} from "./titolo";
 import {Entity, OdataForeignKey} from "@bds/nt-context";
+import { Procedimento } from "./procedimento";
 
 export class AziendaTipoProcedimento extends Entity {
     public id: number;
@@ -17,7 +18,7 @@ export class AziendaTipoProcedimento extends Entity {
     public idTipoProcedimento: TipoProcedimento;
     public FK_id_titolo: number;
     public idTitolo: Titolo;
-    public procedimentoList: Titolo[];
+    public procedimentoList: Procedimento[];
     public giorniPreavvisoScadenzaTermini: number;
     public regolamentiRiferimentiInterni: string;
 
