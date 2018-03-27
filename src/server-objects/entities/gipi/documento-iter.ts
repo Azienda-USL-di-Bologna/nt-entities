@@ -8,6 +8,7 @@ export class DocumentoIter extends Entity {
   public registro: string;
   public idIter: Iter;
   public FK_id_iter: number;
+  public oggetto: string;
 
   public getOdataContextEntity(): any {
     return {
@@ -19,7 +20,8 @@ export class DocumentoIter extends Entity {
         numeroRegistro: "String",
         anno: "Int32",
         registro: "String",
-        idIter: new OdataForeignKey(new Iter().getName(), "id")
+        idIter: new OdataForeignKey(new Iter().getName(), "id"),
+        oggetto: "String"
       }
     };
   }
