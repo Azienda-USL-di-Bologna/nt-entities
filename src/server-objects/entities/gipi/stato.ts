@@ -1,7 +1,5 @@
 import { Entity, OdataForeignKey } from "@bds/nt-context";
-import { IN_CORSO_CODICE,
-            SOSPESO_CODICE,
-            CHIUSO_CODICE} from "../../../client-objects/constants/stati-iter"
+import { STATI } from "../../../client-objects/constants/stati-iter"
 
 export class Stato extends Entity {
     public id: number;
